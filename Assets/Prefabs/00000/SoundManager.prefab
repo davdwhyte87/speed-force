@@ -1,0 +1,132 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8473538146415551315
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8473538146415551317}
+  - component: {fileID: 8473538146415551316}
+  m_Layer: 0
+  m_Name: SoundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8473538146415551317
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8473538146415551315}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.9674072, y: -0.7582016, z: -8.289551}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8473538146415551316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8473538146415551315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf39d9643a1d5f14a87f0fa051f24462, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: BackgroundMusic
+    clip: {fileID: 8300000, guid: 20344c7bd0cd11f4881bcb9a5fae63ca, type: 3}
+    source: {fileID: 0}
+    volume: 1
+    pitch: 1
+    loop: 1
+  - name: ButtonSound
+    clip: {fileID: 8300000, guid: 2a6c679c113ad0c46ab60ba05ae17cc4, type: 3}
+    source: {fileID: 0}
+    volume: 0.6
+    pitch: 1
+    loop: 0
+  - name: HitGuardian
+    clip: {fileID: 8300000, guid: 37dc536d103e22b4e90c11b7b3869b6d, type: 3}
+    source: {fileID: 0}
+    volume: 0.7
+    pitch: 1
+    loop: 0
+  - name: HitObstacle
+    clip: {fileID: 8300000, guid: cc7277c6529cb8042bea6549b44ba3cd, type: 3}
+    source: {fileID: 0}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+  - name: FemaleHitObstacle
+    clip: {fileID: 8300000, guid: 7e2fb71727611a64cbfc1043219c293c, type: 3}
+    source: {fileID: 0}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+  - name: GemPickupSound
+    clip: {fileID: 8300000, guid: b20adbb9884bd6d478ac230c8153c019, type: 3}
+    source: {fileID: 0}
+    volume: 0.4
+    pitch: 1
+    loop: 0
+  - name: PowerupPickupSound
+    clip: {fileID: 8300000, guid: 15fdc4a9c57f4864fb891632a687df84, type: 3}
+    source: {fileID: 0}
+    volume: 0.6
+    pitch: 1
+    loop: 0
+  - name: PhasingSound
+    clip: {fileID: 8300000, guid: c078c917a1a78b74f8397941de7c88e6, type: 3}
+    source: {fileID: 0}
+    volume: 0.25
+    pitch: 1
+    loop: 0
+  - name: SlowMoSound
+    clip: {fileID: 8300000, guid: f942fca070f56e446941404db8628c47, type: 3}
+    source: {fileID: 0}
+    volume: 0.25
+    pitch: 1
+    loop: 0
+  - name: VapourizeSound
+    clip: {fileID: 8300000, guid: ef633c2725c91be4698a0ada38c33568, type: 3}
+    source: {fileID: 0}
+    volume: 0.4
+    pitch: 1
+    loop: 0
+  - name: FallOfSound
+    clip: {fileID: 8300000, guid: d15e43990f71d5246a1f670a29884b26, type: 3}
+    source: {fileID: 0}
+    volume: 0.6
+    pitch: 1
+    loop: 0
+  - name: FemaleFallOfSound
+    clip: {fileID: 8300000, guid: c05d1e25938b05041921ce8a4216a3c5, type: 3}
+    source: {fileID: 0}
+    volume: 0.6
+    pitch: 1
+    loop: 0
+  - name: VictorySound
+    clip: {fileID: 8300000, guid: fb27c7f53ee50db4f95a759425411094, type: 3}
+    source: {fileID: 0}
+    volume: 0.9
+    pitch: 1
+    loop: 0
+  - name: PortalSound
+    clip: {fileID: 8300000, guid: 72fe41a396e520f49b0200e9d369d7d2, type: 3}
+    source: {fileID: 0}
+    volume: 1
+    pitch: 1
+    loop: 0
+  isVibrating: 0

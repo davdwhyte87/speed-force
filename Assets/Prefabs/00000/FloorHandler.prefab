@@ -1,0 +1,121 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4693259844407946207
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4693259844407946200}
+  - component: {fileID: 4693259844407946201}
+  m_Layer: 0
+  m_Name: FloorHandler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4693259844407946200
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4693259844407946207}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4693259844407946201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4693259844407946207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f88f550e21baab641baea083b3429170, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  floors1:
+  - {fileID: 7892636532067396337, guid: a17202aa25c861543b6bf0059e2a6b7d, type: 3}
+  - {fileID: 7892636532067396337, guid: e0becee9c3acedb47a7babcc77e65912, type: 3}
+  - {fileID: 7892636532067396337, guid: 50faf6c3d0cd2434c9a46c9142ddb6c1, type: 3}
+  - {fileID: 7892636532067396337, guid: 056f72991cb7f424f96e6783143d0fe8, type: 3}
+  - {fileID: 7892636532067396337, guid: caba094ef79313147a1fbf7d59583300, type: 3}
+  - {fileID: 7892636532067396337, guid: 8467cf7ec12dfc249a4488fdd3c967e7, type: 3}
+  - {fileID: 7892636532067396337, guid: 60d6f05649b48d44f8c1684019974619, type: 3}
+  - {fileID: 7892636532067396337, guid: d8e8c3720b7cb3244a72ceefc5ee85ce, type: 3}
+  - {fileID: 7892636532067396337, guid: 7b05a7cacc9cc6c47b61a9d9b4816ad7, type: 3}
+  - {fileID: 7892636532067396337, guid: 8efcb319867acc2478540c4cda7bc10b, type: 3}
+  - {fileID: 7892636532067396337, guid: 7ed170ecf9504eb439891ca9e3335dc6, type: 3}
+  floors2:
+  - {fileID: 5341088749012112215, guid: f33e32d0553f3014cbe95358171925db, type: 3}
+  - {fileID: 5341088749012112215, guid: d20a315f658ba444a8770c7349579055, type: 3}
+  - {fileID: 5341088749012112215, guid: 8ce5ae9ef32d54a45a76724d725024ba, type: 3}
+  - {fileID: 5341088749012112215, guid: 5dbe59910d478e346bc9d6a5342a6d41, type: 3}
+  - {fileID: 5341088749012112215, guid: e77c5988be7ee4748be3d495df11db81, type: 3}
+  - {fileID: 5341088749012112215, guid: d7ea2bb13d9b86a48b31cf784f45c46b, type: 3}
+  - {fileID: 5341088749012112215, guid: 50405a0ecdbe9de4f81d23cd8c7a3ad4, type: 3}
+  - {fileID: 5341088749012112215, guid: 6403618f05c9e814cb31d8c0e8d68f9a, type: 3}
+  - {fileID: 5341088749012112215, guid: 99afc5c46fc3f004bb66488966fc8cf7, type: 3}
+  - {fileID: 5341088749012112215, guid: e44eca2f607411c40b05e77c3e793139, type: 3}
+  - {fileID: 5341088749012112215, guid: b212b3fcee7d94a4eae8f22141ecdf24, type: 3}
+  - {fileID: 5341088749012112215, guid: 0373fafb5b9af3c44abfcdb69f84ec03, type: 3}
+  - {fileID: 5341088749012112215, guid: 05bf5021eec21ec4ca2e360392e4931c, type: 3}
+  - {fileID: 5341088749012112215, guid: 8649f267b6b891d438381c7e7a5f8094, type: 3}
+  - {fileID: 5341088749012112215, guid: 40bacd4e5c3f2914789085cced0a1a8f, type: 3}
+  - {fileID: 5341088749012112215, guid: 283fdc0a54270ff49921a638463e394e, type: 3}
+  - {fileID: 5341088749012112215, guid: ea51b1676f2a66c4a825dc1a931ac705, type: 3}
+  - {fileID: 5341088749012112215, guid: 618b9bbeef573f54397488c6c27fe367, type: 3}
+  - {fileID: 5341088749012112215, guid: 0d8b5b4c64716f646a01f41c03607062, type: 3}
+  floors3:
+  - {fileID: 5341088749012112215, guid: fbdbecc06f5d3914bbd8a34f406c9088, type: 3}
+  - {fileID: 5341088749012112215, guid: 2016892a1fc051d46ba5689d677d33fc, type: 3}
+  - {fileID: 5341088749012112215, guid: 887f3e993a153b64b8c3f118a2a3b043, type: 3}
+  - {fileID: 5341088749012112215, guid: 950bb4866882a0a4fa272ea03de453db, type: 3}
+  - {fileID: 5341088749012112215, guid: 7e058698f58d33143b5ae3c3519f99c4, type: 3}
+  - {fileID: 5341088749012112215, guid: 547910da98ba66140bef33ec165474fa, type: 3}
+  - {fileID: 5341088749012112215, guid: d243f522d4a49a446b7fba3db3a4a321, type: 3}
+  - {fileID: 5341088749012112215, guid: 3f02ea248e7e45342978a784c79dd0f6, type: 3}
+  - {fileID: 5341088749012112215, guid: ed262126714786a439e61fe248318845, type: 3}
+  - {fileID: 5341088749012112215, guid: 5c61348171ee2e44a98d77c4869305e7, type: 3}
+  - {fileID: 5341088749012112215, guid: 1a0d7887c518e8a4cb5481753f4ba205, type: 3}
+  - {fileID: 5341088749012112215, guid: 99d4228bcef3a11439a6af79eacf0096, type: 3}
+  - {fileID: 5341088749012112215, guid: 1ae1a78f3e00ff442a92ad34482016e5, type: 3}
+  - {fileID: 5341088749012112215, guid: ea1163416ba05de44a12ed477f062988, type: 3}
+  - {fileID: 5341088749012112215, guid: 4d879abbf9c1167499a2eb51d0e415c9, type: 3}
+  - {fileID: 5341088749012112215, guid: cd84225fbbe0b8147ac200e4154cb064, type: 3}
+  - {fileID: 5341088749012112215, guid: 4074cb1cd1cfac744869a08bcfd07ffe, type: 3}
+  - {fileID: 5341088749012112215, guid: e77102dcd905ab94389c4ed207c878d0, type: 3}
+  - {fileID: 5341088749012112215, guid: 41f06013366a74c4c9495ca884b01654, type: 3}
+  - {fileID: 5341088749012112215, guid: 1484337d81ab70c449130466accb0dd4, type: 3}
+  - {fileID: 5341088749012112215, guid: 51271706126f4834088bf90e17a4e904, type: 3}
+  - {fileID: 5341088749012112215, guid: d5685ec98d09790438fbe3a7c604b494, type: 3}
+  - {fileID: 5341088749012112215, guid: 4c60d258d9a103a4096193d6ec6ac2bb, type: 3}
+  - {fileID: 5341088749012112215, guid: 53c5c77352cb5994899d468cca2a0ab2, type: 3}
+  - {fileID: 5341088749012112215, guid: 6d48b843ba88ba8469af47124bc1f881, type: 3}
+  - {fileID: 5341088749012112215, guid: 8ae25a37d0ef58e45a24cd115acd2801, type: 3}
+  - {fileID: 5341088749012112215, guid: 4b038a6131042b14295e00c1436bc78c, type: 3}
+  startingFloor: {fileID: 7892636532067396337, guid: 822144725f8f7814ca4c9256cf165999,
+    type: 3}
+  firstSpeedForceBridgeFloor: {fileID: 5341088749012112215, guid: f53333e8b38644749a6e7774a8c76a09,
+    type: 3}
+  currentSpawnPos: {x: 0, y: 0, z: 0}
+  playerPos: {fileID: 0}
+  tileLength: 150
+  numberOfFloors: 7
+  earthNotifyText: {fileID: 0}
+  porthole: {fileID: 4015847377697133279, guid: 59b58c5e55358a244a67608dde935924,
+    type: 3}
+  bridgeNotify: {fileID: 1968894730094847713, guid: 31bb14cf45124f742ac4c66e10a2caaa,
+    type: 3}
+  fisrtSpeedForceFloor: {fileID: 5341088749012112215, guid: f5d83d1452724f94e94cd7a8fe41cb39,
+    type: 3}
