@@ -1,14 +1,24 @@
 using System;
+using System.Collections;
 using System.Net.Http;
+using System.Threading.Tasks;
+using Newtonsoft.Json;
+using UnityEngine.Networking;
+using UnityEngine.PlayerLoop;
 
+namespace Service
+{
+    public static class AuthService
+    {
 
-namespace Service{
-    public static class AuthService{
-     
         // public  HttpClient client;
         // signs a new user up via the internet
-        public static  void Signup(){
-            HttpResponseMessage response  = APIClient.GetRequest("/signup");
+        public static void Signup()
+        {
+
+            IEnumerator response = APIClient.PostRequest("/user");
+            Console.WriteLine(response.Current);
+
             //var n = new FormUrlEncodedContent();
             // HttpResponseMessage response = client.GetAsync("/wallet").Result; 
             //  if (response.IsSuccessStatusCode)
@@ -29,5 +39,12 @@ namespace Service{
             //     Debug.Log(((int)response.StatusCode));
             // }
         }
+
+
+        public static void XSignup()
+        {
+
+        }
+
     }
 }

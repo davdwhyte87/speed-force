@@ -1,7 +1,13 @@
 using System;
+using System.Collections.Generic;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Text;
+using System.Threading.Tasks;
+using UnityEditor.PackageManager;
 using UnityEngine;
+using Newtonsoft.Json;
+using Assets.Scripts.Network.Models;
 
 namespace Service
 {
@@ -9,7 +15,9 @@ namespace Service
     public static  class APIClient{
         public static HttpClient client = new HttpClient();
         private static  string  URL = APIData.GetURL();
-         
+        public static string APIKEY = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiUGxheWVyIiwiZW1haWwiOiJlbWFpbDEyQHguY29tIiwibmFtZSI6IkpvaG4gYm90IiwiZXhwIjoxNjgyMzU0OTg1fQ.PJmbIyDfkjv9r2g59gUbWJMWrJoIgSeNwnPnZQ5gOdk";
+
+
         public  static HttpClient GetAPIClient(){
             // Debug.Log(URL);
             client.BaseAddress = new Uri(URL);
@@ -50,19 +58,63 @@ namespace Service
             return response;
         }
 
-        public static void PostRequest()
+        public static IEnumerator<HttpResponseMessage> PostRequest(string url)
         {
+            Debug.Log("Sending post reuqest ");
             LoginRequest loginRequest = new LoginRequest();
-            loginRequest.Email = "email";
-            loginRequest.Code = "code";
-            //string json = JsonConvert.SerializeObject(loginRequest);
+            loginRequest.email = "email";
+            loginRequest.code = "code";
+            string json = JsonConvert.SerializeObject(loginRequest);
+            var header = new Dictionary<string, string>()
+            {
+                {"Mkol","Value" }
+            };
+            Debug.Log(json);
+            var httpRequestMessage = new HttpRequestMessage();
+            httpRequestMessage.Method = HttpMethod.Post;
+            var finalUrl = APIData.GetURL() + url;
+            httpRequestMessage.RequestUri = new Uri(finalUrl);
+           
+
+
+
+            HttpContent httpContent = new StringContent(json, Encoding.UTF8, "application/json");
+            httpRequestMessage.Content = httpContent;
+
+            var _client = GetAPIClient();
+
+            Debug.Log("Sending....");
+            var result = _client.SendAsync(httpRequestMessage).Result;
+            yield return result;
         }
-        
+
+
+        static async Task<HttpResponseMessage> Request(HttpMethod httpMethod, string pUrl, string requestContent, Dictionary<string, string> headers)
+        {
+            var httpRequestMessage = new HttpRequestMessage();
+            httpRequestMessage.Method = httpMethod;
+            var finalUrl = APIData.GetURL() + pUrl;
+            httpRequestMessage.RequestUri = new Uri(finalUrl);
+            foreach (var head in headers)
+            {
+                httpRequestMessage.Headers.Add(head.Key, head.Value);
+            }
+
+
+
+            HttpContent httpContent = new StringContent(requestContent, Encoding.UTF8, "application/json");
+            httpRequestMessage.Content = httpContent;
+
+            var _client = GetAPIClient();
+
+            Debug.Log("Sending....");
+            var result =await _client.SendAsync(httpRequestMessage);
+            return result; 
+        }
+
     }   
 
-    class LoginRequest
-    {
-        public string Email { get; set; }
-        public string Code { get; set; }
-    }
+ 
+
+  
 }

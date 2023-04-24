@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Assets.Scripts.Network;
 
 public class PauseScript : MonoBehaviour
 {
@@ -31,11 +32,17 @@ public class PauseScript : MonoBehaviour
         SetPauseCurrentAbilityUI();
     }
 
+    void Update()
+    {
+        //Debug.Log(WalletService.WalletBalance);
+    }
+
 
     public void Pause(){
         //Should I be doing this? I think so
         autoActivateAbility = false;
         SetPauseAutoActivateAbilityUI();
+
 
         FindObjectOfType<SoundManager>().Play("ButtonSound");
         pauseRemainingDistance.text = "Distance Left: " + ScoreHandler.remainingDistance.ToString("0000") + "m";
@@ -49,6 +56,12 @@ public class PauseScript : MonoBehaviour
         abilityActivateButton.SetActive(false);
         Time.timeScale = 0f;
         scoreText.SetActive(false);
+
+
+        //Debug.Log("XXXX Paused");
+        //StartCoroutine(WalletService.GetWallet());
+        
+       
     }
 
     public void UnPause(){
