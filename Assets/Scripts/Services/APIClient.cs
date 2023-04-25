@@ -15,7 +15,7 @@ namespace Service
     public static  class APIClient{
         public static HttpClient client = new HttpClient();
         private static  string  URL = APIData.GetURL();
-        public static string APIKEY = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiUGxheWVyIiwiZW1haWwiOiJlbWFpbDEyQHguY29tIiwibmFtZSI6IkpvaG4gYm90IiwiZXhwIjoxNjgyMzU0OTg1fQ.PJmbIyDfkjv9r2g59gUbWJMWrJoIgSeNwnPnZQ5gOdk";
+        public static string APIKEY = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiUGxheWVyIiwiZW1haWwiOiJlbWFpbDEyQHguY29tIiwibmFtZSI6IkpvaG4gYm90IiwiZXhwIjoxNjgyNDM4ODUxfQ.dXy-R04GVZiRp1BLcD5ajPG-fVvZXksCQo18VCCaLqE";
 
 
         public  static HttpClient GetAPIClient(){

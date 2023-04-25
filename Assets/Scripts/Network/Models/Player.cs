@@ -39,4 +39,11 @@ namespace Assets.Scripts.Network.Models
     {public int distance { get; set; }
 
     }
+
+    class UpdateAccountInfoRequest
+    {
+        public string account_name { get; set; }
+        public string account_number { get; set; }
+        public string bank_name { get; set; }
+    }
 }

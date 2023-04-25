@@ -10,6 +10,7 @@ using Newtonsoft.Json;
 using UnityEngine.Networking;
 using MongoDB.Bson.Serialization;
 using MongoDB.Bson;
+using Service;
 
 namespace Assets.Scripts.Network
 {
@@ -19,10 +20,9 @@ namespace Assets.Scripts.Network
         private static string APIKEY;
         public void Start()
         {
-            APIKEY = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiUGxheWVyIiwiZW1haWwiOiJlbWFpbDEyQHguY29tIiwibmFtZSI6IkpvaG4gYm90IiwiZXhwIjoxNjgyMjU0ODI5fQ.isvldvlR3UOFyTw4kunrvvXPRO3UAEMAOjn1FAGjcXA";
-            
+            APIKEY = APIClient.APIKEY;
 
-            StartCoroutine(UpdateRunInfo());
+            StartCoroutine(UpdateAccountInfo());
 
         }
 
@@ -84,6 +84,39 @@ namespace Assets.Scripts.Network
                 //var bsonDocument = BsonDocument.Parse(text);
                 var result = BsonSerializer.Deserialize<UpdateRunResponse>(text);
                 Debug.Log(result.run_info.high_score);
+            }
+        }
+
+
+        static public IEnumerator UpdateAccountInfo()
+        {
+            UpdateAccountInfoRequest updateAccountInfoRequest = new UpdateAccountInfoRequest();
+            updateAccountInfoRequest.bank_name = "Deutchet bank";
+            updateAccountInfoRequest.account_name = "John Perry";
+            updateAccountInfoRequest.account_number = "09283094";
+
+            string json = JsonConvert.SerializeObject(updateAccountInfoRequest);
+            var unityWeb = new UnityWebRequest(APIData.GetURL() + "/api/v1/auth/player/add_account_details", "POST");
+            byte[] jsonToSend = new System.Text.UTF8Encoding().GetBytes(json);
+            unityWeb.uploadHandler = (UploadHandler)new UploadHandlerRaw(jsonToSend);
+            unityWeb.downloadHandler = (DownloadHandler)new DownloadHandlerBuffer();
+            unityWeb.SetRequestHeader("Content-Type", "application/json");
+            unityWeb.SetRequestHeader("Authorization", APIKEY);
+            yield return unityWeb.SendWebRequest();
+
+
+            if (unityWeb.isNetworkError || unityWeb.isHttpError)
+            {
+                Debug.Log("Error While Sending: " + unityWeb.error);
+            }
+            else
+            {
+                Debug.Log(unityWeb.downloadHandler.text);
+                var text = unityWeb.downloadHandler.text;
+                //GetWalletResponse result = JsonUtility.FromJson<GetWalletResponse>(text);
+                //var bsonDocument = BsonDocument.Parse(text);
+                var result = BsonSerializer.Deserialize<GeneralResponse>(text);
+                Debug.Log(result.message);
             }
         }
     }
