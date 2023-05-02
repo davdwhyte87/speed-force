@@ -67,7 +67,7 @@ public class FloorHandler : MonoBehaviour
         //Do we even need to check if player can move? Yes, what about when the user hasn't tapped play
         if (PlayerMovement.doMove)
         {
-            if (playerPos.position.z > (tileLength - 200) && level != Level.Adogen)
+            if (playerPos.position.z > (tileLength - 100) && level != Level.Adogen)
             {
                     SpawnFloor();
 
@@ -75,7 +75,7 @@ public class FloorHandler : MonoBehaviour
                     if (numberOfFloors > 8)
                         Delete();
 
-                    tileLength += 30;
+                    tileLength += sizeOfEachFloor;
 
 
             }
@@ -149,7 +149,7 @@ public class FloorHandler : MonoBehaviour
         //int number = Random.Range(0, floors1.Length);
         floor = Instantiate(theFloor, currentSpawnPos, Quaternion.identity) as GameObject;
         activeTiles.Add(floor);
-        currentSpawnPos += new Vector3(0, 0, 30);
+        currentSpawnPos += new Vector3(0, 0, sizeOfEachFloor);
         numberOfFloors++;
 
     }

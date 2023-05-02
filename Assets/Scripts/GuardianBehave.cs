@@ -20,14 +20,14 @@ public class GuardianBehave : MonoBehaviour
     void Update()
     {
         
-        if(!isDead && !PowerupHandler.isPhasing){
+        if(!isDead && !PowerupHandler.isPhasing && PlayerMovement.doMove){
             transform.LookAt(player);
         }
 
         float dist = Vector3.Distance(player.position, transform.position);
 
         if(dist < 3f && hasStartedSlap == false && !PowerupHandler.isPhasing){
-            StartCoroutine(Strike());
+            //StartCoroutine(Strike());
             
         }
         

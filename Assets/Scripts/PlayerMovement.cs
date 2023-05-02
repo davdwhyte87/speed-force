@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     public float horizontalMoveSpeed = 40f;
     public float verticalMoveSpeed = 18;
     public float runAnimSpeed;
+    public float runAnimSpeedCalculatorFactor;
     public Vector3 inputs = Vector3.zero;
     public static bool doMove = false;
     bool hasWon;
@@ -53,7 +54,9 @@ public class PlayerMovement : MonoBehaviour
         Time.timeScale = 1f;
         SM = SoundManager.instance;
         rb = GetComponent<Rigidbody>();
-        rend = this.transform.Find("John").gameObject.GetComponentsInChildren<Renderer>();
+        //rend = this.transform.Find("John").gameObject.GetComponentsInChildren<Renderer>();
+        rend = gameObject.GetComponentsInChildren<Renderer>();
+
 
         transform.position = new Vector3(0, 0.7f, 0);
     }
@@ -61,7 +64,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
-        animator = GetComponentInChildren<Animator>();
+        animator = GetComponent<Animator>();
         StartCoroutine("CountDown");
         doMove = false;
 
@@ -91,7 +94,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        runAnimSpeed = (verticalMoveSpeed / 26);
+        runAnimSpeed = (verticalMoveSpeed / runAnimSpeedCalculatorFactor);
         animator.SetFloat("PlayerSpeed", runAnimSpeed);
 
         if (transform.position.y < 0 && doMove)
@@ -145,12 +148,12 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.MovePosition(rb.position + inputs * Time.fixedDeltaTime);
 
-            if (inputs.z != 0)
+            if (inputs.x != 0)
             {
                 transform.forward += inputs * Time.fixedDeltaTime;
             }
 
-            if (inputs.z == 0)
+            if (inputs.x == 0)
             {
                 transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(0, 0, 0), 200 * Time.fixedDeltaTime);
             }
@@ -197,11 +200,8 @@ public class PlayerMovement : MonoBehaviour
                 }
             }
         }
-    }
 
-    void OnTriggerEnter(Collider col)
-    {
-        if (col.tag == "Guardian")
+        if (col.gameObject.tag == "Guardian")
         {
             if(!PowerupHandler.isPhasing)
             {
@@ -210,29 +210,34 @@ public class PlayerMovement : MonoBehaviour
                     CameraFollow.firstPerson = false;
                 }
 
-                if (transform.position.z > col.transform.position.z - 1 && transform.position.z < col.transform.position.z + 1)
-                {
+                //if (transform.position.z > col.transform.position.z - 1 && transform.position.z < col.transform.position.z + 1)
+                //{
                     transform.LookAt(col.transform);
                     StartCoroutine("HitGuardian");
-                }
-                else
-                {
-                    transform.LookAt(col.transform);
-                    if (col.transform.position.z > transform.position.z)
-                    {
-                        transform.position = col.transform.position - new Vector3(0, 0, 1.2f);
-                    }
-                    else
-                    {
-                        transform.position = col.transform.position + new Vector3(0, 0, 1.2f);
-                    }
+                //}
+                //else
+                //{
+                    //transform.LookAt(col.transform);
+                    //if (col.transform.position.z > transform.position.z)
+                    //{
+                        //transform.position = col.transform.position - new Vector3(0, 0, 1.2f);
+                    //}
+                   // else
+                   // {
+                    //    transform.position = col.transform.position + new Vector3(0, 0, 1.2f);
+                    //}
 
-                    StartCoroutine("HitGuardian");
-                }
+                    //StartCoroutine("HitGuardian");
+                //}
 
             }
 
         }
+    }
+
+    void OnTriggerEnter(Collider col)
+    {
+        
 
         if(col.tag == "Coin")
         {
@@ -296,11 +301,12 @@ public class PlayerMovement : MonoBehaviour
     {
         Time.timeScale = 1f;
         doMove = false;
-        animator.SetBool("IsAlmostDead", true);
-        yield return new WaitForSeconds(.15f);
-        animator.SetBool("IsAlmostDead", false);
+        //animator.SetBool("IsAlmostDead", true);
+        //yield return new WaitForSeconds(.15f);
+        //animator.SetBool("IsAlmostDead", false);
         animator.SetBool("IsDead", true);
-        FindObjectOfType<SoundManager>().Play("HitGuardian");
+        //FindObjectOfType<SoundManager>().Play("HitGuardian");
+        FindObjectOfType<SoundManager>().Play("HitObstacle");
         yield return new WaitForSeconds(1);
         HideUI();
     }

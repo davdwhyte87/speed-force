@@ -1215,8 +1215,10 @@ GameObject:
   m_Component:
   - component: {fileID: 9164952714991016786}
   - component: {fileID: 1277456787693254184}
+  - component: {fileID: 1586806587563923153}
   - component: {fileID: 472729002004397098}
-  - component: {fileID: 6427968562280629876}
+  - component: {fileID: -2163103939566667333}
+  - component: {fileID: -5936081994303436071}
   m_Layer: 0
   m_Name: New-G-B
   m_TagString: Guardian
@@ -1232,8 +1234,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5290368604596627777}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -0.70338154, y: 0.5, z: 1.125027}
-  m_LocalScale: {x: 2.2, y: 2.2, z: 2.2}
+  m_LocalPosition: {x: -0.70338154, y: 0.52, z: 1.125027}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 9099767460673853902}
@@ -1243,7 +1245,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!95 &1277456787693254184
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1260,7 +1262,22 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!136 &1586806587563923153
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5290368604596627777}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.31965673
+  m_Height: 1.6
+  m_Direction: 1
+  m_Center: {x: 0.004967608, y: 0.8, z: 0.19953582}
 --- !u!65 &472729002004397098
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1270,11 +1287,24 @@ BoxCollider:
   m_GameObject: {fileID: 5290368604596627777}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.67948854, y: 1.7163485, z: 0.81668}
   m_Center: {x: 0.015786506, y: 0.87317425, z: 0.15289609}
---- !u!114 &6427968562280629876
+--- !u!114 &-2163103939566667333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5290368604596627777}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68169ea215bc3674086e98b15c3d5bd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDead: 0
+--- !u!114 &-5936081994303436071
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1283,10 +1313,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 5290368604596627777}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68169ea215bc3674086e98b15c3d5bd3, type: 3}
+  m_Script: {fileID: 11500000, guid: 3ca02bfe2b215f440b490a224fe6fc54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isDead: 0
+  isMoving: 0
+  dir: 0
+  maxZoom: 100
+  horizontalDampening: 5
+  distanceToPlayer: 0
+  playerInSightFigure: 60
+  rotateSpeed: 50
 --- !u!1 &5574268534822383543
 GameObject:
   m_ObjectHideFlags: 0

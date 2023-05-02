@@ -1,0 +1,18 @@
+{
+	"AchievementIDs":[],
+	"LeaderboardIDs":[
+		{
+			"InternalID":"SpeedForceHighScore",
+			"AppleID":"",
+			"GoogleID":"CgkIhpu9vJUeEAIQAQ"
+		}
+	],
+	"CloudVariables":[],
+	"AppleSupported":false,
+	"GoogleSupported":true,
+	"GoogleAppID":"1036556127622",
+	"GoogleSetupRun":true,
+	"DebugModeEnabled":true,
+	"Version":"2.6.8",
+	"SettingsLocation":"1"
+}

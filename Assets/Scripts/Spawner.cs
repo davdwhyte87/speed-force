@@ -98,7 +98,7 @@ public class Spawner : MonoBehaviour
         if(obstacleNum == 0)
             doubleObstacleSpawn = false;
         else if(obstacleNum == 1)
-            doubleObstacleSpawn = true;
+            //doubleObstacleSpawn = true;
 
         if(randPoint2 == randPoint)
             doubleObstacleSpawn = false;
@@ -112,12 +112,12 @@ public class Spawner : MonoBehaviour
 
         float randScale = 0;
         if(randObstacle == 0 || randObstacle == 1 || randObstacle == 2)
-            randScale = Random.Range(2.2f, 2.8f);
+            randScale = Random.Range(1f, 1.5f);
         else if(randObstacle == 3 || randObstacle == 4 || randObstacle == 5)
-            randScale = Random.Range(55, 65);
+            randScale = Random.Range(35, 40);
 
         obj = Instantiate(newPool[randObstacle], new Vector3(guardianSpawnPoints[randPoint].position.x,
-        guardianSpawnPoints[randPoint].position.y, guardianSpawnPoints[randPoint].position.z - zScatter), Quaternion.identity) as GameObject;
+        guardianSpawnPoints[randPoint].position.y, guardianSpawnPoints[randPoint].position.z - zScatter), Quaternion.Euler(0, 180, 0)) as GameObject;
         obj.transform.localScale = new Vector3(randScale, randScale, randScale);
         obj.transform.SetParent(transform);
 
@@ -129,9 +129,9 @@ public class Spawner : MonoBehaviour
 
             float randScale2 = 0;
             if(randObstacle2 == 0 || randObstacle2 == 1 || randObstacle2 == 2)
-                randScale2 = Random.Range(2.2f, 2.8f);
+                randScale2 = Random.Range(1f, 1.5f);
             else if(randObstacle == 3 || randObstacle2 == 4 || randObstacle2 == 5)
-                randScale2 = Random.Range(55, 65);
+                randScale2 = Random.Range(35, 40);
 
             obj = Instantiate(newPool[randObstacle2], new Vector3(guardianSpawnPoints[randPoint2].position.x,
             guardianSpawnPoints[randPoint2].position.y, guardianSpawnPoints[randPoint2].position.z - zScatter), Quaternion.identity) as GameObject;

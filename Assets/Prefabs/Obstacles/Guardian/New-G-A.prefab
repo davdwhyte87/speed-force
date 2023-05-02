@@ -865,7 +865,7 @@ GameObject:
   - component: {fileID: 3357617054846250200}
   m_Layer: 0
   m_Name: mixamorig10:Neck
-  m_TagString: Untagged
+  m_TagString: Guardian
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1215,6 +1215,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9164952714991016786}
   - component: {fileID: 1277456787693254184}
+  - component: {fileID: 7358138975277442069}
   - component: {fileID: 472729002004397098}
   - component: {fileID: 6427968562280629876}
   m_Layer: 0
@@ -1233,7 +1234,7 @@ Transform:
   m_GameObject: {fileID: 5290368604596627777}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: -0.70338154, y: 0.5, z: 1.125027}
-  m_LocalScale: {x: 2.2, y: 2.2, z: 2.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 9099767460673853902}
@@ -1243,7 +1244,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!95 &1277456787693254184
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1260,7 +1261,22 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!136 &7358138975277442069
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5290368604596627777}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 0
+  m_Radius: 0.31965673
+  m_Height: 1.6
+  m_Direction: 1
+  m_Center: {x: 0.004967608, y: 0.8, z: 0.19953582}
 --- !u!65 &472729002004397098
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1270,7 +1286,7 @@ BoxCollider:
   m_GameObject: {fileID: 5290368604596627777}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.67948854, y: 1.7163485, z: 0.81668}
   m_Center: {x: 0.015786506, y: 0.87317425, z: 0.15289609}

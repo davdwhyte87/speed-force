@@ -37,7 +37,7 @@ public class CameraFollow : MonoBehaviour
     void Update()
     {
         if(firstPerson == false){
-            transform.position = new Vector3(player.position.x, player.position.y + 4.5f, player.position.z - 5);
+            transform.position = new Vector3(player.position.x, player.position.y + 2.3f, player.position.z - 2.2f);
             //transform.rotation = Quaternion.Euler(0, 26, 0);
         }
         else{
